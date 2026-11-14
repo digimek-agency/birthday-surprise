@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: linear-gradient(135deg, #ffe0ec, #f8d9ff, #fff0f5);
+    color: #713c59;
+    text-align: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+section {
+    min-height: 100vh;
+    display: none;
+    padding: 35px 18px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease;
+}
+
+section.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    color: #e65b91;
+    font-size: clamp(30px, 6vw, 48px);
+    margin: 15px 0;
+}
+
+h2 {
+    color: #d94d87;
+    margin: 15px 0;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 12px auto;
+}
+
+button {
+    background: #ed78a7;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px #e9a5c5;
+    transition: .3s;
+}
+
+button:hover {
+    background: #d94d87;
+    transform: scale(1.06);
+}
+
+.heart {
+    font-size: 110px;
+    animation: heartbeat 1s infinite;
+    cursor: pointer;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.glow {
+    text-shadow: 0 0 15px #ff83b5;
+}
+
+.card {
+    background: rgba(255,255,255,.85);
+    padding: 35px 25px;
+    width: min(90%, 530px);
+    border-radius: 25px;
+    box-shadow: 0 10px 35px #d99ab9;
+    border: 2px solid white;
+}
+
+.envelope {
+    font-size: 100px;
+    cursor: pointer;
+    animation: float 2s infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.girl, .boy {
+    display: inline-block;
+    font-size: clamp(65px, 13vw, 105px);
+    margin: 8px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.scene {
+    font-size: 85px;
+    margin: 20px;
+}
+
+.room {
+    width: min(90%, 600px);
+    min-height: 220px;
+    background: linear-gradient(#ffe8f2, #fff5f9);
+    border: 8px solid white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 20px #dda9c2;
+}
+
+.decor {
+    font-size: 35px;
+    animation: float 2s infinite;
+    display: inline-block;
+    margin: 8px;
+}
+
+.balloon {
+    position: fixed;
+    bottom: -100px;
+    font-size: 35px;
+    animation: rise 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes rise {
+    to { transform: translateY(-120vh) rotate(20deg); }
+}
+
+.wish {
+    background: white;
+    border-radius: 20px;
+    padding: 18px;
+    margin: 12px auto;
+    width: min(90%, 550px);
+    box-shadow: 0 5px 15px #efbdd3;
+}
+
+.cake {
+    font-size: 90px;
+    animation: bounce 1.5s infinite;
+}
+
+.hug {
+    font-size: 110px;
+    animation: hug 2s infinite;
+}
+
+@keyframes hug {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.final-card {
+    background: #fff;
+    padding: 35px 25px;
+    border-radius: 25px;
+    max-width: 650px;
+    width: 95%;
+    box-shadow: 0 10px 35px #d99ab9;
+}
+
+footer {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #b45d82;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floating balloons -->
+<div id="balloons"></div>
+
+<!-- SCREEN 1 -->
+<section class="active" id="screen1">
+    <div class="heart" onclick="next(2)">❤️</div>
+    <h1 class="glow">A Little Surprise For You</h1>
+    <p>Someone special has a little surprise waiting for you...</p>
+    <button onclick="next(2)">Open Your Surprise 💗</button>
+</section>
+
+<!-- SCREEN 2 -->
+<section id="screen2">
+    <div class="heart">💗</div>
+    <h1>I Love You</h1>
+    <p>You are one of the most beautiful parts of my life.</p>
+    <p>And today, this little surprise is only for you. 🥹</p>
+    <button onclick="next(3)">Continue My Love 💕</button>
+</section>
+
+<!-- SCREEN 3 -->
+<section id="screen3">
+    <div class="card">
+        <div class="envelope" onclick="next(4)">💌</div>
+        <h1>A Birthday Letter</h1>
+        <p>There is something special inside this little card.</p>
+        <button onclick="next(4)">Open The Card 💝</button>
+    </div>
+</section>
+
+<!-- SCREEN 4 -->
+<section id="screen4">
+    <h1>Guess What? 🥹</h1>
+    <div>
+        <span class="girl">👧🏻</span>
+        <span class="boy">👦🏻</span>
+    </div>
+    <p>A little girl has a special birthday surprise for her favorite boy!</p>
+    <button onclick="next(5)">See Your Surprise ❤️</button>
+</section>
+
+<!-- SCREEN 5 -->
+<section id="screen5">
+    <div class="scene">🎂🎉🎈</div>
+    <h1 class="glow">Happy Birthday</h1>
+    <h1>MY LOVE ❤️</h1>
+    <div class="girl">👧🏻</div>
+    <p>Today is all about you, my favorite person!</p>
+    <button onclick="next(6)">Read My Wishes 💗</button>
+</section>
+
+<!-- SCREEN 6 -->
+<section id="screen6">
+    <h1>My Birthday Wishes For You 🌷</h1>
+
+    <div class="wish">
+        🌸 May your life always be filled with happiness, love and endless smiles.
+    </div>
+
+    <div class="wish">
+        ❤️ May all your dreams come true and may you achieve everything your heart wishes for.
+    </div>
+
+    <div class="wish">
+        🥹 May you always have reasons to smile, even on your hardest days.
+    </div>
+
+    <div class="wish">
+        💗 I hope this new chapter brings you beautiful memories, success and peace.
+    </div>
+
+    <div class="wish">
+        🫶 And most importantly, I hope you always feel loved and special.
+    </div>
+
+    <button onclick="next(7)">Next Surprise 🎀</button>
+</section>
+
+<!-- SCREEN 7 -->
+<section id="screen7">
+    <h1>Preparing Your Birthday Room 🎀</h1>
+    <p>Look! Someone is decorating the room just for you!</p>
+
+    <div class="room">
+        <div class="decor">🎈 🎀 🎈</div>
+        <div class="girl">👧🏻</div>
+        <div class="decor">🌸 🎊 🌸</div>
+        <h2>Happy Birthday!</h2>
+        <div class="decor">🧸 💗 🎂</div>
+        <p>Made with lots of love ❤️</p>
+    </div>
+
+    <button onclick="next(8)">The Party Begins! 🎉</button>
+</section>
+
+<!-- SCREEN 8 -->
+<section id="screen8">
+    <h1>It's Celebration Time! 🎉</h1>
+    <div class="scene">🎊🎈🎂🎈🎊</div>
+
+    <div>
+        <span class="girl">👧🏻</span>
+        <span class="boy">👦🏻</span>
+    </div>
+
+    <div class="cake">🎂</div>
+    <h2>Make A Wish, My Love!</h2>
+    <p>May this birthday be as beautiful and special as you are.</p>
+    <button onclick="next(9)">One Last Thing... 🥺</button>
+</section>
+
+<!-- SCREEN 9 -->
+<section id="screen9">
+    <div class="final-card">
+        <h1>One Last Message ❤️</h1>
+
+        <p>
+        So finally, today is your day! 🥹❤️
+        </p>
+
+        <p>
+        I want to celebrate your day with you, but it's okay.
+        I hope one day we will celebrate your day together
+        with even more happiness.
+        </p>
+
+        <p>
+        I never wanna lose you.
+        I'm very happy to have you in my life.
+        You mean more to me than words can ever explain.
+        </p>
+
+        <p>
+        No matter how far we are, you will always have
+        a special place in my heart.
+        </p>
+
+        <h2>Happy Birthday Once Again, My Love! 💗</h2>
+
+        <button onclick="next(10)">A Hug For You 🫂</button>
+    </div>
+</section>
+
+<!-- SCREEN 10 -->
+<section id="screen10">
+    <h1>Come Here, My Love! 🥺</h1>
+
+    <div class="hug">👩🏻‍❤️‍👨🏻</div>
+
+    <h1>Biggest Virtual Hug! 🫂</h1>
+
+    <p>
+    If I could be anywhere right now,
+    I would choose to be right beside you. ❤️
+    </p>
+
+    <h2>Forever Sending You Love 💗</h2>
+
+    <div class="scene">💐💝🌷</div>
+
+    <button onclick="next(1)">Replay Our Little Story 💕</button>
+
+    <footer>Made with endless love ❤️</footer>
+</section>
+
+<script>
+
+function next(number) {
+    document.querySelectorAll("section").forEach(section => {
+        section.classList.remove("active");
+    });
+
+    document.getElementById("screen" + number).classList.add("active");
+
+    window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+// Floating balloons and hearts
+const balloonBox = document.getElementById("balloons");
+
+const emojis = ["🎈", "💗", "💕", "🌸", "✨"];
+
+function createBalloon() {
+    const balloon = document.createElement("div");
+    balloon.className = "balloon";
+    balloon.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+    balloon.style.left = Math.random() * 100 + "vw";
+    balloon.style.animationDuration = (5 + Math.random() * 6) + "s";
+
+    balloonBox.appendChild(balloon);
+
+    setTimeout(() => {
+        balloon.remove();
+    }, 11000);
+}
+
+setInterval(createBalloon, 800);
+
+</script>
+
+</body>
+</html>

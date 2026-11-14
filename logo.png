@@ -1,0 +1,7 @@
+
+<section id="screen4">
+    <h1>A Special Surprise For You! ❤️</h1>
+    <div class="story-art" style="background-position: 0% 50%;"></div>
+    <p>Your girl has a special gift for you! 🎁</p>
+    <button onclick="next(5)">Open Your Surprise 💗</button>
+</section>

@@ -1,0 +1,23 @@
+
+.story-art {
+    width: min(88vw, 420px);
+    aspect-ratio: 1 / 1;
+    background-image: url("birthday-storyboard.png");
+    background-size: 300% 300%;
+    background-repeat: no-repeat;
+    border: 6px solid white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px #d99ab9;
+    animation: scenePop 1s ease;
+}
+
+@keyframes scenePop {
+    from {
+        opacity: 0;
+        transform: scale(.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
